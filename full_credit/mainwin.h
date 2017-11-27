@@ -8,6 +8,7 @@
 #include "order.h"
 #include "emporium.h"
 #include "person.h"
+#include "customer.h"
 #include "manager.h"
 #include "server.h"
 #include <gtkmm.h>
@@ -21,7 +22,7 @@ class Mainwin : public Gtk::Window
     protected:
         //void on_file_new_click();                   // Create a new Emporium
         void on_create_order_click();                 // Create a new order
-        //void on_create_customer_click();            // Create a new customer
+        void on_create_customer_click();            // Create a new customer
         void on_create_item_click();                  // Create a new item
         void on_new_emporium_click();
         void on_create_server_click();              // Create a new server
@@ -48,6 +49,7 @@ class Mainwin : public Gtk::Window
         void on_display_order_report_click();
         void inv_report();
         void order_dlg();
+        void generate_cust_report(Mice::Emporium branch);
     private:
         //void create_order();                        // Create a new order
         Mice::Serving create_serving();             // Create a new serving
@@ -70,7 +72,9 @@ class Mainwin : public Gtk::Window
         std::vector<Mice::Serving> _servings;         // All defined servings
         std::vector<Mice::Order> _orders;             // All defined orders
         std::vector<Mice::Server> _servers;           // All defined servers
+        std::vector<Mice::Customer> _customers;
         std::vector<Mice::Emporium> _emporiums;     // All defined emporiums
         std::vector<Mice::Manager> _managers;       //all defined managers
+
 };
 #endif

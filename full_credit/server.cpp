@@ -37,7 +37,7 @@ namespace Mice {
   std::string Server::to_string(){
     std::string s = "";
     s += this->name() + "\n" + " (ID: " + std::to_string(this->id()) + ")\n";
-    s += "Phone: " + phone() + "\n";
+    s += "Phone: " + this->phone() + "\n";
     s += "Salary: $" + std::to_string(this->get_salary()) + "/hour\n";
     s += "Orders Served: " + std::to_string(this->get_num_orders_lifetime()) + "\n";
     return s;

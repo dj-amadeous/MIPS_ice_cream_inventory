@@ -71,7 +71,7 @@ Mainwin::Mainwin()
     //         C U S T O M E R
     // (Server, Manager, Owner) “Create a New Customer” Append Customer to the Create menu
     Gtk::MenuItem *menuitem_customer = Gtk::manage(new Gtk::MenuItem("_Customer...", true));
-    //menuitem_customer->signal_activate().connect(sigc::mem_fun(*this, &Mainwin::on_create_customer_click));
+    menuitem_customer->signal_activate().connect(sigc::mem_fun(*this, &Mainwin::on_create_customer_click));
     createmenu->append(*menuitem_customer);
 
     //        M A N A G E R
