@@ -141,6 +141,16 @@ Mainwin::Mainwin()
     menuitem_flav->signal_activate().connect(sigc::mem_fun(*this, &Mainwin::on_edit_flavor_click));
     managermenu->append(*menuitem_flav);
 
+    //edit topping
+    Gtk::MenuItem *menuitem_topping = Gtk::manage(new Gtk::MenuItem("_Edit a Topping", true));
+    menuitem_topping->signal_activate().connect(sigc::mem_fun(*this, &Mainwin::on_edit_topping_click));
+    managermenu->append(*menuitem_topping);
+
+    //edit container
+    Gtk::MenuItem *menuitem_container = Gtk::manage(new Gtk::MenuItem("_Edit a Container", true));
+    menuitem_container->signal_activate().connect(sigc::mem_fun(*this, &Mainwin::on_edit_container_click));
+    managermenu->append(*menuitem_container);
+
     //          D I S P L A Y   S E  R V E R   R E P O R T
     //displays a report of all servers
     Gtk::MenuItem *menuitem_report = Gtk::manage(new Gtk::MenuItem("_Display Server Report", true));
