@@ -49,7 +49,7 @@ class Mainwin : public Gtk::Window
         void on_display_order_report_click();
         void inv_report();
         void order_dlg();
-        void generate_cust_report(Mice::Emporium branch);
+        void on_generate_cust_report_click();
     private:
         //void create_order();                        // Create a new order
         Mice::Serving create_serving();             // Create a new serving

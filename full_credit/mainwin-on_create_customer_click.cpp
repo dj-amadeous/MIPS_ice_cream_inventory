@@ -21,7 +21,7 @@ void Mainwin::on_create_customer_click()
   dialog.get_vbox()->pack_start(b_name, Gtk::PACK_SHRINK);
 //customer id entry
   Gtk::HBox b_id;
-  Gtk::Label l_id{"Server ID:"};
+  Gtk::Label l_id{"Customer ID:"};
   l_id.set_width_chars(WIDTH);
   b_id.pack_start(l_id, Gtk::PACK_SHRINK);
 
@@ -55,7 +55,6 @@ void Mainwin::on_create_customer_click()
     phone = e_phone.get_text();
   }
   id_to_int = stoi(id);
-  salary_to_dub = stod(salary);
 
   Mice::Customer customer(name, id_to_int, phone);
   _customers.push_back(customer);

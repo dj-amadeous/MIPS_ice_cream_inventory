@@ -141,6 +141,10 @@ Mainwin::Mainwin()
     Gtk::MenuItem *menuitem_report = Gtk::manage(new Gtk::MenuItem("_Display Server Report", true));
     menuitem_report->signal_activate().connect(sigc::mem_fun(*this, &Mainwin::on_display_server_report_click));
     managermenu->append(*menuitem_report);
+    // DISPLAY CUSTOMER REPORT
+    Gtk::MenuItem *menuitem_cust_report = Gtk::manage(new Gtk::MenuItem("_Display Customer Report", true));
+    menuitem_cust_report->signal_activate().connect(sigc::mem_fun(*this, &Mainwin::on_generate_cust_report_click));
+    managermenu->append(*menuitem_cust_report);
 
     // DISPLAY ORDER REPORT
     Gtk::MenuItem *menuitem_order_report = Gtk::manage(new Gtk::MenuItem("_Display order report", true));
@@ -274,11 +278,17 @@ void Mainwin::on_easteregg_click() {
           Mice::Server{"Evan Cornish", 1, "6834868346", 9.25});
         _emporiums.push_back(
           Mice::Emporium{"Branch 1", _containers, _scoops, _toppings, _orders, _servers});
+        _customers.push_back(
+          Mice::Customer{"George Rice", 1, "8888888888"});
+        _customers.push_back(
+          Mice::Customer{"Nora Red", 2, "9999999999"});
+
+
 
           std::cout << _emporiums[0] << std::endl; //overloaded << operator
 
         // Display acknowledgement
-        Gtk::MessageDialog dialog{*this, "Added 2 containers, 3 scoops, 3 toppings, 1 branch, and 2 servers"};
+        Gtk::MessageDialog dialog{*this, "Added 2 containers, 3 scoops, 3 toppings, 1 branch, 2 customers, and 2 servers"};
         dialog.run();
         dialog.close();
  }
@@ -363,3 +373,7 @@ void Mainwin::on_display_order_report_click()
 {
   order_dlg();
 }
+/*void Mainwin::on_display_cust_report_click()
+{
+  generate_cust_report()
+}*/
