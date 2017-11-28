@@ -50,6 +50,7 @@ class Mainwin : public Gtk::Window
         void inv_report();
         void order_dlg();
         void on_generate_cust_report_click();
+        void on_edit_flavor_click();
     private:
         //void create_order();                        // Create a new order
         Mice::Serving create_serving();             // Create a new serving

@@ -21,6 +21,10 @@ class Item {
     int quantity() const;
     std::string to_string();
     //void set_image();
+    void set_name(std::string name);
+    void set_price(double price);
+    void set_cost(double cost);
+    void set_description(std::string description);
   private:
     std::string _name;
     std::string _description;

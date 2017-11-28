@@ -136,6 +136,11 @@ Mainwin::Mainwin()
     menuitem_sal->signal_activate().connect(sigc::mem_fun(*this, &Mainwin::on_change_server_salary_click));
     managermenu->append(*menuitem_sal);
 
+    //edit flavor
+    Gtk::MenuItem *menuitem_flav = Gtk::manage(new Gtk::MenuItem("_Edit a Flavor", true));
+    menuitem_flav->signal_activate().connect(sigc::mem_fun(*this, &Mainwin::on_edit_flavor_click));
+    managermenu->append(*menuitem_flav);
+
     //          D I S P L A Y   S E  R V E R   R E P O R T
     //displays a report of all servers
     Gtk::MenuItem *menuitem_report = Gtk::manage(new Gtk::MenuItem("_Display Server Report", true));

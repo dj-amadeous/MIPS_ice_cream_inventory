@@ -28,6 +28,22 @@ std::string Item::to_string()
 
   return s;
 }
+void Item::set_name(std::string name)
+{
+  _name = name;
+}
+void Item::set_description(std::string description)
+{
+  _description = description;
+}
+void Item::set_price(double price)
+{
+  _price = price;
+}
+void Item::set_cost(double cost)
+{
+  _cost = cost;
+}
 
 }
 
